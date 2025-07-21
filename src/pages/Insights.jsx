@@ -58,12 +58,7 @@ const Insights = () => {
       {
         label: 'Total Expenses',
         data: Object.values(categoryTotals),
-        backgroundColor: [
-          'rgba(59, 130, 246, 0.7)', // blue-500
-          'rgba(37, 99, 235, 0.7)', // blue-600
-          'rgba(96, 165, 250, 0.7)', // blue-400
-          'rgba(191, 219, 254, 0.7)', // blue-200
-        ],
+        backgroundColor: 'rgba(59, 130, 246, 0.7)', // blue-500
         borderRadius: 8,
       },
     ],
@@ -84,33 +79,36 @@ const Insights = () => {
         data: Object.values(monthlyTotals),
         fill: false,
         borderColor: 'rgba(59, 130, 246, 1)', // blue-500
-        backgroundColor: 'rgba(96, 165, 250, 0.7)', // blue-400
+        backgroundColor: 'rgba(59, 130, 246, 0.7)', // blue-500
         tension: 0.3,
         pointRadius: 6,
-        pointBackgroundColor: 'rgba(59, 130, 246, 1)', // blue-500
+        pointBackgroundColor: 'rgba(59, 130, 246, 1)',
       },
     ],
   };
 
   return (
     <div className="p-8 max-w-5xl mx-auto font-sans">
-      <h2 className="text-3xl font-extrabold mb-6 text-blue-700 flex items-center gap-2"><BarChart2 className="w-8 h-8 text-blue-500" /> Insights</h2>
+      <div className="flex items-center gap-2 mb-6">
+        <BarChart2 className="w-7 h-7 text-blue-500" />
+        <h2 className="text-3xl font-extrabold text-blue-500">Insights</h2>
+      </div>
       {loading ? (
         <div className="text-center py-8">Loading...</div>
       ) : error ? (
         <div className="text-center text-red-500 py-8">{error}</div>
       ) : (
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white/80 rounded-2xl shadow-lg p-6">
-            <h3 className="text-xl font-bold mb-4 text-blue-600">Total Expenses per Category</h3>
+          <div className="bg-white border border-blue-100 rounded-2xl shadow-lg p-6">
+            <h3 className="text-xl font-bold mb-4 text-blue-700">Total Expenses per Category</h3>
             <Bar data={barData} options={{
               responsive: true,
               plugins: { legend: { display: false }, title: { display: false } },
               scales: { y: { beginAtZero: true } },
             }} />
           </div>
-          <div className="bg-white/80 rounded-2xl shadow-lg p-6">
-            <h3 className="text-xl font-bold mb-4 text-blue-600">Expenses Over Time</h3>
+          <div className="bg-white border border-blue-100 rounded-2xl shadow-lg p-6">
+            <h3 className="text-xl font-bold mb-4 text-blue-700">Expenses Over Time</h3>
             <Line data={lineData} options={{
               responsive: true,
               plugins: { legend: { display: false }, title: { display: false } },

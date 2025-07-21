@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import api from '../api/axios';
-import { ListChecks } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 const AuditLogs = () => {
   const [logs, setLogs] = useState([]);
@@ -23,10 +23,13 @@ const AuditLogs = () => {
 
   return (
     <div className="p-8 max-w-5xl mx-auto font-sans">
-      <h2 className="text-3xl font-extrabold mb-6 text-blue-700 flex items-center gap-2"><ListChecks className="w-8 h-8 text-blue-500" /> Audit Logs</h2>
-      <div className="overflow-x-auto rounded-2xl shadow-lg bg-white/80">
+      <div className="flex items-center gap-2 mb-6">
+        <FileText className="w-7 h-7 text-blue-500" />
+        <h2 className="text-3xl font-extrabold text-blue-500">Audit Logs</h2>
+      </div>
+      <div className="overflow-x-auto rounded-2xl shadow-lg bg-white border border-blue-100">
         <table className="min-w-full text-sm text-gray-700">
-          <thead className="bg-gradient-to-r from-blue-500 to-blue-700 text-white">
+          <thead className="bg-blue-500 text-white">
             <tr>
               <th className="py-3 px-4 text-left">User</th>
               <th className="py-3 px-4 text-left">Action</th>
