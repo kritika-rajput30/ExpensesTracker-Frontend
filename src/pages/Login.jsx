@@ -19,7 +19,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-600 via-indigo-500 to-pink-400">
+    <div className="min-h-[95vh] flex items-center justify-center bg-gradient-to-br from-purple-600 via-indigo-500 to-pink-400">
       <form onSubmit={handleSubmit} className="backdrop-blur-md bg-white/20 p-10 rounded-2xl shadow-2xl w-96 flex flex-col gap-4 border border-white/30">
         <h2 className="text-3xl font-extrabold text-center text-white mb-2">Sign In</h2>
         {error && <div className="text-red-200 bg-red-500/30 rounded px-2 py-1 text-center">{error}</div>}
