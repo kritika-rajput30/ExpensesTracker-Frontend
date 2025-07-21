@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import api from '../api/axios';
+import { ListChecks } from 'lucide-react';
 
 const AuditLogs = () => {
   const [logs, setLogs] = useState([]);
@@ -21,11 +22,11 @@ const AuditLogs = () => {
   }, []);
 
   return (
-    <div className="p-8 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-extrabold mb-6 text-purple-700">Audit Logs</h2>
+    <div className="p-8 max-w-5xl mx-auto font-sans">
+      <h2 className="text-3xl font-extrabold mb-6 text-blue-700 flex items-center gap-2"><ListChecks className="w-8 h-8 text-blue-500" /> Audit Logs</h2>
       <div className="overflow-x-auto rounded-2xl shadow-lg bg-white/80">
         <table className="min-w-full text-sm text-gray-700">
-          <thead className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+          <thead className="bg-gradient-to-r from-blue-500 to-blue-700 text-white">
             <tr>
               <th className="py-3 px-4 text-left">User</th>
               <th className="py-3 px-4 text-left">Action</th>
@@ -42,7 +43,7 @@ const AuditLogs = () => {
             ) : logs.length === 0 ? (
               <tr><td colSpan="5" className="text-center py-6">No audit logs found.</td></tr>
             ) : logs.map(log => (
-              <tr key={log._id} className="border-b last:border-none hover:bg-purple-50/40">
+              <tr key={log._id} className="border-b last:border-none hover:bg-blue-50/40">
                 <td className="py-2 px-4">{log.user?.email || '-'}</td>
                 <td className="py-2 px-4">{log.action.replace('_', ' ')}</td>
                 <td className="py-2 px-4">{log.expense ? log.expense._id : '-'}</td>

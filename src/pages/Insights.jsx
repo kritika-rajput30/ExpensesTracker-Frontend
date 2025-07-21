@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import api from '../api/axios';
 import { Bar, Line } from 'react-chartjs-2';
+import { BarChart2 } from 'lucide-react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -58,10 +59,10 @@ const Insights = () => {
         label: 'Total Expenses',
         data: Object.values(categoryTotals),
         backgroundColor: [
-          'rgba(139, 92, 246, 0.7)', // purple-500
-          'rgba(236, 72, 153, 0.7)', // pink-500
-          'rgba(99, 102, 241, 0.7)', // indigo-500
-          'rgba(16, 185, 129, 0.7)', // emerald-500
+          'rgba(59, 130, 246, 0.7)', // blue-500
+          'rgba(37, 99, 235, 0.7)', // blue-600
+          'rgba(96, 165, 250, 0.7)', // blue-400
+          'rgba(191, 219, 254, 0.7)', // blue-200
         ],
         borderRadius: 8,
       },
@@ -82,18 +83,18 @@ const Insights = () => {
         label: 'Expenses Over Time',
         data: Object.values(monthlyTotals),
         fill: false,
-        borderColor: 'rgba(139, 92, 246, 1)',
-        backgroundColor: 'rgba(236, 72, 153, 0.7)',
+        borderColor: 'rgba(59, 130, 246, 1)', // blue-500
+        backgroundColor: 'rgba(96, 165, 250, 0.7)', // blue-400
         tension: 0.3,
         pointRadius: 6,
-        pointBackgroundColor: 'rgba(139, 92, 246, 1)',
+        pointBackgroundColor: 'rgba(59, 130, 246, 1)', // blue-500
       },
     ],
   };
 
   return (
-    <div className="p-8 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-extrabold mb-6 text-purple-700">Insights</h2>
+    <div className="p-8 max-w-5xl mx-auto font-sans">
+      <h2 className="text-3xl font-extrabold mb-6 text-blue-700 flex items-center gap-2"><BarChart2 className="w-8 h-8 text-blue-500" /> Insights</h2>
       {loading ? (
         <div className="text-center py-8">Loading...</div>
       ) : error ? (
@@ -101,7 +102,7 @@ const Insights = () => {
       ) : (
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-white/80 rounded-2xl shadow-lg p-6">
-            <h3 className="text-xl font-bold mb-4 text-purple-600">Total Expenses per Category</h3>
+            <h3 className="text-xl font-bold mb-4 text-blue-600">Total Expenses per Category</h3>
             <Bar data={barData} options={{
               responsive: true,
               plugins: { legend: { display: false }, title: { display: false } },
@@ -109,7 +110,7 @@ const Insights = () => {
             }} />
           </div>
           <div className="bg-white/80 rounded-2xl shadow-lg p-6">
-            <h3 className="text-xl font-bold mb-4 text-purple-600">Expenses Over Time</h3>
+            <h3 className="text-xl font-bold mb-4 text-blue-600">Expenses Over Time</h3>
             <Line data={lineData} options={{
               responsive: true,
               plugins: { legend: { display: false }, title: { display: false } },
