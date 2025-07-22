@@ -125,6 +125,14 @@ npm run dev
 ---
 
 ## Screenshots
+<img width="1920" height="1020" alt="Screenshot 2025-07-22 112825" src="https://github.com/user-attachments/assets/8258fc50-1121-47d5-b3e9-bd8d27254306" />
+<img width="1920" height="1020" alt="Screenshot 2025-07-22 113024" src="https://github.com/user-attachments/assets/3e92e6d3-601e-49bf-8399-400d1fb45db9" />
+<img width="1920" height="1020" alt="Screenshot 2025-07-22 113032" src="https://github.com/user-attachments/assets/57a848b6-3fb2-4737-972d-7b775f7c5375" />
+<img width="1920" height="1020" alt="Screenshot 2025-07-22 112958" src="https://github.com/user-attachments/assets/77a80774-c045-439d-b8d1-2350a4b1d88a" />
+<img width="1920" height="1020" alt="Screenshot 2025-07-22 112951" src="https://github.com/user-attachments/assets/4364049a-1d9f-44cb-910c-292495b5a5c0" />
+<img width="1920" height="1020" alt="Screenshot 2025-07-22 112925" src="https://github.com/user-attachments/assets/f01893b0-d971-4e19-98f9-70c07d908343" />
+
+
 
 
 
@@ -138,7 +146,6 @@ npm run dev
 
 ```
 https://expenses-tracker-frontend-wine.vercel.app/login
-```<img width="1920" height="1020" alt="Screenshot 2025-07-22 112825" src="https://github.com/user-attachments/assets/703e924f-ac8f-435f-9799-5aba8ce8880f" />
-<img width="1920" height="1020" alt="Screenshot 2025-07-22 112825" src="https://github.com/user-attachments/assets/45f03099-c299-4744-a301-0ed6659b211f" />
+```
 
 ---
